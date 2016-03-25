@@ -12,8 +12,8 @@ $options = array();
 $options[] = array(
 	'id'				=> 'direct_section_example',
 	'priority'			=> 10,
-	'title'				=> __('Direct Section Example'),
-	'description'		=> __('Without panel. Directly section example.'),
+	'title'				=> esc_html__('Direct Section Example', '_s'),
+	'description'		=> esc_html__('Without panel. Directly section example.', '_s'),
 	'active_callback'	=> '',
 	'options'			=> array(
 		array(
@@ -24,8 +24,8 @@ $options[] = array(
 				'transport'	=> 'postMessage'
 			),
 			'control' => array(
-				'label'		=> __( 'Example Control', 'mytheme' ),
-				'subtitle'	=> __( 'Lorem ipsum dolor sit amet', 'mytheme' ),
+				'label'		=> esc_html__( 'Example Control', '_s' ),
+				'subtitle'	=> esc_html__( 'Lorem ipsum dolor sit amet', '_s' ),
 				'type'		=> 'text'
 			),
 		),

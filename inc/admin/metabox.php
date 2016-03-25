@@ -8,13 +8,13 @@
 // Test data should be removed at development
 $_s_post_meta_options = array(
 	'id' => '_s_test_meta',
-	'title' => __('Test Metabox2', 'textdomain'),
+	'title' => esc_html__('Test Metabox2', '_s'),
 	'post_type' => array('post', 'page'),
 	'options' => array(
 		array(
 			'id' => 'ctfif_tst_text',
-			'label'    => __( 'Text Input', 'mytheme' ),
-			'subtitle'    => __( 'Lorem ipsum dolor sit amet', 'mytheme' ),
+			'label'    => esc_html__( 'Text Input', '_s' ),
+			'subtitle'    => esc_html__( 'Lorem ipsum dolor sit amet', '_s' ),
 			'type'     => 'text',
 			'default' => 'Test Text',
 		),
