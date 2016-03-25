@@ -5,6 +5,40 @@
  * @package _s
  */
 
+$options = array();
+
+// Should be removed these controls
+// Direct "Section > Control" Example
+$options[] = array(
+	'id'				=> 'direct_section_example',
+	'priority'			=> 10,
+	'title'				=> __('Direct Section Example'),
+	'description'		=> __('Without panel. Directly section example.'),
+	'active_callback'	=> '',
+	'options'			=> array(
+		array(
+			'setting' => array(
+				'id'		=> 'test_option_2',
+				'default'	=> 'Test Feild',
+				'type'		=> 'theme_mod',
+				'transport'	=> 'postMessage'
+			),
+			'control' => array(
+				'label'		=> __( 'Example Control', 'mytheme' ),
+				'subtitle'	=> __( 'Lorem ipsum dolor sit amet', 'mytheme' ),
+				'type'		=> 'text'
+			),
+		),
+	)
+);
+
+if (class_exists('CTF_Customizer')) {
+	$args = array(
+		'opt_name' => 'test_opt'
+	);
+	new CTF_Customizer($args, $options);
+}
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *

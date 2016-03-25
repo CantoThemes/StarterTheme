@@ -143,9 +143,19 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
- * Customizer additions.
+ * Customizer Options
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/admin/customizer.php';
+
+/**
+ * Metabox Options
+ */
+require get_template_directory() . '/inc/admin/metabox.php';
+
+/**
+ * Customizer Options
+ */
+require get_template_directory() . '/inc/admin/shortcode-map.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -153,6 +163,8 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Bootstrap Navbar Walker Class
+ * TGM Plugin Activation Class
  */
-require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+require get_template_directory() . '/inc/tgm/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/tgm/tgm-confix.php';
+

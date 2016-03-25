@@ -1,367 +1,89 @@
 /*!
 Theme Name: _s
-Theme URI: http://underscores.me/
+Theme URI: http://www.cantothemes.com/
 Author: Automattic
-Author URI: http://automattic.com/
+Author URI: http://www.cantothemes.com/
 Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: _s
 Tags:
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-_s is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-    ## Posts and pages
-	## Asides
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
+1. Default HTML Tags Styles
+2. All WP Common Class Styles
+3. Navbar Styles
+4. Responsive Styles
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-# Typography
+1. Default HTML Tags Styles
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
+html {
+  font-size: 14px;
+}
 body {
-  background: #ffffff;
-  /* Fallback for when there is no custom background color defined. */
+  font-family: 'Open Sans', sans-serif;
+  color: #000000;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 1.8;
 }
-blockquote,
-q {
-  quotes: "" "";
-}
-blockquote:before,
-q:before,
-blockquote:after,
-q:after {
-  content: "";
-}
-hr {
-  background-color: #cccccc;
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em;
-}
-ul {
-  list-style: disc;
-}
-ol {
-  list-style: decimal;
+p {
+  margin: 0 0 25.2px;
 }
 img {
-  height: auto;
-  /* Make sure images are scaled correctly. */
   max-width: 100%;
-  /* Adhere to container width. */
+  height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+input[type=text],
+input[type=password],
+input[type=search],
+input[type=email],
+input[type=url],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 table {
-  margin: 0 0 1.5em;
   width: 100%;
-}
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  border: 1px solid;
-  border-color: #cccccc #cccccc #bbbbbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1;
-  padding: .6em 1em .4em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-  border-color: #cccccc #bbbbbb #aaaaaa;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-}
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active,
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus {
-  border-color: #aaaaaa #bbbbbb #bbbbbb;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-textarea {
-  color: #666666;
-  border: 1px solid #cccccc;
-  border-radius: 3px;
-}
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus {
-  color: #111111;
-}
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-  padding: 3px;
-}
-textarea {
-  padding-left: 3px;
-  width: 100%;
-}
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Menus
---------------------------------------------------------------*/
-.main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%;
-}
-.main-navigation ul {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-.main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 1.5em;
-  left: -999em;
-  z-index: 99999;
-}
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
-}
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-  left: 100%;
-}
-.main-navigation ul ul a {
-  width: 200px;
-}
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-  left: auto;
-}
-.main-navigation li {
-  float: left;
-  position: relative;
-}
-.main-navigation a {
-  display: block;
-  text-decoration: none;
-}
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block;
-}
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none;
-  }
-  .main-navigation ul {
-    display: block;
-  }
-}
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-  margin: 0 0 1.5em;
-  overflow: hidden;
-}
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-  float: left;
-  width: 50%;
-}
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%;
-}
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-/* Text meant only for screen readers. */
-.screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-  background-color: #f1f1f1;
-  border-radius: 3px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  clip: auto !important;
-  color: #21759b;
-  display: block;
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-weight: bold;
-  height: auto;
-  left: 5px;
-  line-height: normal;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  top: 5px;
-  width: auto;
-  z-index: 100000;
-  /* Above WP toolbar. */
-}
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em;
-}
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em;
-}
-.aligncenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-.widget {
-  margin: 0 0 1.5em;
-  /* Make sure select elements fit in widgets. */
-}
-.widget select {
   max-width: 100%;
+  border: 1px solid #dddddd;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
-/* Search widget. */
-.widget_search .search-submit {
+table tr td,
+table tr th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+/*--------------------------------------------------------------
+2. All WP Common Class Styles
+--------------------------------------------------------------*/
+.screen-reader-text {
   display: none;
 }
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Posts and pages
---------------------------------------------------------------*/
-.sticky {
-  display: block;
-}
-.hentry {
-  margin: 0 0 1.5em;
-}
-.byline,
-.updated:not(.published) {
-  display: none;
-}
-.single .byline,
-.group-blog .byline {
-  display: inline;
-}
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em;
-}
-/*--------------------------------------------------------------
-## Asides
---------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-  display: none;
-}
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
-.comment-content a {
-  word-wrap: break-word;
-}
-.bypostauthor {
-  display: block;
-}
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-  /* Theme Footer (when set to scrolling) */
-  display: none;
-}
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-  display: block;
-}
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -376,9 +98,6 @@ iframe,
 object {
   max-width: 100%;
 }
-/*--------------------------------------------------------------
-## Captions
---------------------------------------------------------------*/
 .wp-caption {
   margin-bottom: 1.5em;
   max-width: 100%;
@@ -394,9 +113,22 @@ object {
 .wp-caption-text {
   text-align: center;
 }
-/*--------------------------------------------------------------
-## Galleries
---------------------------------------------------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Gallery */
 .gallery {
   margin-bottom: 1.5em;
 }
@@ -433,4 +165,124 @@ object {
 .gallery-caption {
   display: block;
 }
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none;
+}
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+  display: block;
+}
+/*--------------------------------------------------------------
+3. Navbar Styles
+--------------------------------------------------------------*/
+.main-navigation .menu-toggle {
+  display: none;
+}
+.main-navigation .menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  content: "";
+  display: table;
+}
+.main-navigation .menu ul li {
+  display: inline-block;
+  position: relative;
+}
+.main-navigation .menu ul li a {
+  display: block;
+  padding: 10px;
+}
+.main-navigation .menu > ul > li > ul {
+  min-width: 210px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+}
+.main-navigation .menu > ul > li > ul > li {
+  display: block;
+}
+.main-navigation .menu > ul > li > ul > li a {
+  display: block;
+}
+.main-navigation .menu > ul > li > ul > li ul {
+  min-width: 210px;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+}
+.main-navigation .menu > ul > li > ul > li ul li {
+  display: block;
+}
+.main-navigation .menu > ul > li > ul > li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
+.main-navigation .menu > ul > li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
+/*--------------------------------------------------------------
+4. Responsive Styles
+--------------------------------------------------------------*/
+/* Trigger at Tablet or small screen (max screen size 1024px) */
+@media (max-width: 1024px) {
+  .main-navigation .menu-toggle {
+    display: inline-block;
+  }
+  .main-navigation .menu {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+  }
+  .main-navigation .menu ul li {
+    display: block;
+    position: relative;
+  }
+  .main-navigation .menu > ul > li > ul {
+    position: static;
+  }
+  .main-navigation .menu > ul > li > ul > li ul {
+    position: static;
+  }
+  .main-navigation .menu > ul > li > ul > li ul li {
+    display: block;
+  }
+  .main-navigation .menu > ul > li > ul > li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+  }
+  .main-navigation .menu > ul > li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+  }
+  .main-navigation.toggled .menu {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+  }
+}
+/* iPad Screen */
+/* iPhone 6+ Screen */
+/* iPhone 6 Screen */
+/* iPhone 5 Screen */
+/* iPhone 4 Screen */
 /*# sourceMappingURL=style.css.map */
