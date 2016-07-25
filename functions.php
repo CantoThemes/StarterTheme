@@ -163,6 +163,11 @@ require get_template_directory() . '/inc/admin/shortcode-map.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Load CantoFramework
+ */
+require get_template_directory() . '/inc/framework/cantoframework.php';
+
+/**
  * TGM Plugin Activation Class
  */
 require get_template_directory() . '/inc/tgm/class-tgm-plugin-activation.php';
