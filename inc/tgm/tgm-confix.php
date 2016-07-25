@@ -39,18 +39,6 @@ function _s_register_required_plugins() {
 	 */
 	$plugins = array(
 		array(
-			'name'      => 'CantoFramework',
-			'slug'      => 'cantoframework',
-			'source'    => 'https://github.com/CantoThemes/CantoFramework/archive/1.0-Alpha-2.zip',
-			'required'  => true,
-		),
-		array(
-			'name'      => 'CantoMetabox',
-			'slug'      => 'cantometabox',
-			'source'    => 'https://github.com/CantoThemes/CantoMetabox/archive/master.zip',
-			'required'  => true,
-		),
-		array(
 			'name'        => 'WordPress SEO by Yoast',
 			'slug'        => 'wordpress-seo',
 			'is_callable' => 'wpseo_init',
