@@ -224,8 +224,11 @@ window.CTF_Core = window.CTF_Core || {};
             /* Set input linking value (example Name attr) */
             this.inputArgs.link = this.inputNameAttr;
 
-
-            this.inputArgs.defaultValue  = this.inputArgs.default;
+            if (typeof this.inputArgs.defaultValue !== 'undefined') {
+            	this.inputArgs.defaultValue  = this.inputArgs.defaultValue;
+            } else {
+            	this.inputArgs.defaultValue  = this.inputArgs.default;
+            }
 
             this.inputObj = $(field_tmpl(this.inputArgs));
 
@@ -239,6 +242,8 @@ window.CTF_Core = window.CTF_Core || {};
 	
 	// Text input
 	CTF_Core.Api.ctf_text = CTF_Core.Input.extend({});
+
+	CTF_Core.Api.ctf_readonly = CTF_Core.Input.extend({});
 
 	// Email input
 	CTF_Core.Api.ctf_email = CTF_Core.Input.extend({});
@@ -589,19 +594,19 @@ window.CTF_Core = window.CTF_Core || {};
 				allNewVals['font-weight'] = fwInput.val();
 			}
 
-			if (fzValueInput.size()) {
+			if (fzValueInput.size() && fzValueInput.val()) {
 				allNewVals['font-size'] = fzValueInput.val()+fzUnitInput.val();
 			}
 
-			if (lhValueInput.size()) {
+			if (lhValueInput.size() && lhValueInput.val()) {
 				allNewVals['line-height'] = lhValueInput.val()+lhUnitInput.val();
 			}
 
-			if (lsValueInput.size()) {
+			if (lsValueInput.size() && lsValueInput.val()) {
 				allNewVals['letter-spacing'] = lsValueInput.val()+lsUnitInput.val();
 			}
 
-			if (wsValueInput.size()) {
+			if (wsValueInput.size() && wsValueInput.val()) {
 				allNewVals['word-spacing'] = wsValueInput.val()+wsUnitInput.val();
 			}
 
@@ -650,19 +655,19 @@ window.CTF_Core = window.CTF_Core || {};
 					allNewVals['font-weight'] = fwInput.val();
 				}
 
-				if (fzValueInput.size()) {
+				if (fzValueInput.size() && fzValueInput.val()) {
 					allNewVals['font-size'] = fzValueInput.val()+fzUnitInput.val();
 				}
 
-				if (lhValueInput.size()) {
+				if (lhValueInput.size() && lhValueInput.val()) {
 					allNewVals['line-height'] = lhValueInput.val()+lhUnitInput.val();
 				}
 
-				if (lsValueInput.size()) {
+				if (lsValueInput.size() && lsValueInput.val()) {
 					allNewVals['letter-spacing'] = lsValueInput.val()+lsUnitInput.val();
 				}
 
-				if (wsValueInput.size()) {
+				if (wsValueInput.size() && wsValueInput.val()) {
 					allNewVals['word-spacing'] = wsValueInput.val()+wsUnitInput.val();
 				}
 	            inputValInput.val( JSON.stringify(allNewVals) );
@@ -677,19 +682,19 @@ window.CTF_Core = window.CTF_Core || {};
 					allNewVals['font-weight'] = fwInput.val();
 				}
 
-				if (fzValueInput.size()) {
+				if (fzValueInput.size() && fzValueInput.val()) {
 					allNewVals['font-size'] = fzValueInput.val()+fzUnitInput.val();
 				}
 
-				if (lhValueInput.size()) {
+				if (lhValueInput.size() && lhValueInput.val()) {
 					allNewVals['line-height'] = lhValueInput.val()+lhUnitInput.val();
 				}
 
-				if (lsValueInput.size()) {
+				if (lsValueInput.size() && lsValueInput.val()) {
 					allNewVals['letter-spacing'] = lsValueInput.val()+lsUnitInput.val();
 				}
 
-				if (wsValueInput.size()) {
+				if (wsValueInput.size() && wsValueInput.val()) {
 					allNewVals['word-spacing'] = wsValueInput.val()+wsUnitInput.val();
 				}
 
@@ -705,19 +710,19 @@ window.CTF_Core = window.CTF_Core || {};
 					allNewVals['font-weight'] = fwInput.val();
 				}
 
-				if (fzValueInput.size()) {
+				if (fzValueInput.size() && fzValueInput.val()) {
 					allNewVals['font-size'] = fzValueInput.val()+fzUnitInput.val();
 				}
 
-				if (lhValueInput.size()) {
+				if (lhValueInput.size() && lhValueInput.val()) {
 					allNewVals['line-height'] = lhValueInput.val()+lhUnitInput.val();
 				}
 
-				if (lsValueInput.size()) {
+				if (lsValueInput.size() && lsValueInput.val()) {
 					allNewVals['letter-spacing'] = lsValueInput.val()+lsUnitInput.val();
 				}
 
-				if (wsValueInput.size()) {
+				if (wsValueInput.size() && wsValueInput.val()) {
 					allNewVals['word-spacing'] = wsValueInput.val()+wsUnitInput.val();
 				}
 				
@@ -783,11 +788,20 @@ window.CTF_Core = window.CTF_Core || {};
 					var attachment = $this.frame.state().get('selection').first().toJSON();
 					
 					$this.ImageView.find('img').remove();
-					$this.ImageView.append('<img class="ctf-ifi-vimg" src="'+attachment.sizes.thumbnail.url+'" alt="'+attachment.alt+'" />');
+
+					var imgThumbUrl = '';
+
+					if (typeof attachment.sizes.thumbnail !== 'undefined') {
+						imgThumbUrl = attachment.sizes.thumbnail.url;
+					} else {
+						imgThumbUrl = attachment.url;
+					}
+
+					$this.ImageView.append('<img class="ctf-ifi-vimg" src="'+imgThumbUrl+'" alt="'+attachment.alt+'" />');
 					
 					$this.allVals = {};
 					
-					$this.allVals['thumbnail'] = attachment.sizes.thumbnail.url;
+					$this.allVals['thumbnail'] = imgThumbUrl;
 					$this.allVals['url'] = attachment.url;
 					$this.allVals['id'] = attachment.id;
 					$this.allVals['title'] = attachment.title;

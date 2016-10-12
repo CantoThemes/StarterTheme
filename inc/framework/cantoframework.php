@@ -8,13 +8,13 @@
  * Author URI: https://www.cantothemes.com
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) || ! defined( 'CTF_PATH' ) || ! defined( 'CTF_URL' ) ){
+	exit;
+}
 
-define('CTF_PATH', plugin_dir_path( __FILE__ ));
-define('CTF_URL', plugin_dir_url( __FILE__ ));
-
-
-
+if (! defined( 'CTF_PATH' ) || ! defined( 'CTF_URL' )){
+	return;
+}
 
 if ( ! class_exists( 'CTF_Init' ) ) :
 
@@ -43,9 +43,11 @@ class CTF_Init {
 			// add_action( 'plugins_loaded', array( self::$instance, 'load_textdomain' ) );
 
 			self::$instance->includes();
-			self::$instance->include_customizer_class();
+			// self::$instance->register_assets();
 
 			add_action('admin_footer', array(self::$instance,'print_window_js_var'));
+			add_action('wp_enqueue_scripts', array(self::$instance,'register_assets'));
+			add_action('customize_controls_enqueue_scripts', array(self::$instance,'register_assets'));
 
 		}
 		return self::$instance;
@@ -56,6 +58,16 @@ class CTF_Init {
 		require_once CTF_PATH .'core/helper_class/ctfhelp.class.php';
 		require_once CTF_PATH .'core/helper_class/addon.class.php';
 		require_once CTF_PATH .'core/helper_class/sanitize.php';
+	}
+
+	public function register_assets()
+	{
+		wp_register_style( 'ctf-selectize', CTF_URL.'assets/vendor/selectize/css/selectize.css' );
+		wp_register_style( 'ctf-font-awesome', CTF_URL.'assets/vendor/font-awesome/css/font-awesome.min.css' );
+
+		wp_register_script('ctf-selectize', CTF_URL.'assets/vendor/selectize/js/standalone/selectize.min.js', array('jquery'));
+		wp_register_script('ctf-tinymce', includes_url( 'js/tinymce' ).'/tinymce.min.js', array('jquery'));
+		wp_register_script('ctf-tinymce-compat3x', includes_url( 'js/tinymce' ).'/plugins/compat3x/plugin.min.js', array('jquery'));
 	}
 	
 

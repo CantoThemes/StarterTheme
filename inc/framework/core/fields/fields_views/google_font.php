@@ -3,6 +3,7 @@
 			<div class="ctf-if-gf-font-family">
 				<label>Font Family</label>
 				<select class="ctf-gf-ff-input">
+					<option value="">Select a font...</option>
 					<# for ( key in ctf_google_fonts ) { #>
 						<option value="{{ key }}"<# if ( key === data.value['font-family'] ) { #>selected<# } #>>{{ key }}</option>
 					<# } #>

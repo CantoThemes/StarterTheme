@@ -255,7 +255,7 @@
 }
 
 .ctf-fc .ctf-input-field .wp-picker-container .iris-picker .iris-picker-inner .iris-square {
-  margin-right: 2%;
+  margin-right: 4%;
 }
 
 .ctf-fc .ctf-input-field .wp-picker-container .iris-picker .iris-picker-inner .iris-slider.iris-strip {
@@ -1077,6 +1077,13 @@
 	color: #363636;
 	visibility: visible !important;
 }
+
+.ctf-fc .wp-picker-container,
+.ctf-fc .wp-picker-container:active{
+	display: block;
+}
+
+
 .ctf-mb_container{
 	margin-left: -12px;
 	margin-right: -12px;
@@ -1087,11 +1094,11 @@
 
 @media only screen  and (min-width: 1400px) {
 	.ctf-mb_container.ctf-fc .ctf-cc-container .ctf-input-field-container{
-		width: 59%;
+		width: 70%;
 	}
 
 	.ctf-mb_container.ctf-fc .ctf-cc-container .ctf-title-container {
-	    width: 41%;
+	    width: 30%;
 	}
 }
 

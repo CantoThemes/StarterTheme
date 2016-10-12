@@ -25,7 +25,7 @@ class CTF_Customizer
 		if ( ! class_exists( 'WP_Customize_Control' ) ) {
 			require_once( ABSPATH . WPINC . '/class-wp-customize-control.php' );
 		}
-		require_once CTF_PATH .'core/customizer/CustomizeControl.class.php';
+		require_once get_template_directory() .'/inc/customizer/CustomizeControl.class.php';
 
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customizer_scripts' ), 100 );
 
@@ -42,9 +42,9 @@ class CTF_Customizer
 		wp_enqueue_style( 'ctf-roboto-font', '//fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100italic,100' );
 		wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_style( 'editor-buttons' );
-		wp_enqueue_style( 'ctf-selectize', CTF_URL.'assets/vendor/selectize/css/selectize.css' );
-		wp_enqueue_style( 'ctf-font-awesome', CTF_URL.'assets/vendor/font-awesome/css/font-awesome.min.css' );
-		wp_enqueue_style( 'ctf-customizer', CTF_URL.'core/customizer/assets/css/customizer.css', array('customize-controls', 'ctf-selectize') );
+		wp_enqueue_style( 'customize-controls' );
+		wp_enqueue_style( 'ctf-selectize' );
+		wp_enqueue_style( 'ctf-customizer', get_template_directory_uri().'/inc/customizer/assets/css/customizer.css', array('customize-controls', 'ctf-selectize') );
 
 		$dependency = array(
 			'jquery',
@@ -61,10 +61,10 @@ class CTF_Customizer
 		wp_enqueue_script( 'quicktags' );
 		wp_enqueue_script( 'wp-color-picker' );
 		wp_enqueue_media();
-		wp_enqueue_script('ctf-selectize', CTF_URL.'assets/vendor/selectize/js/standalone/selectize.min.js', array('jquery'));
-		wp_enqueue_script('ctf-tinymce', includes_url( 'js/tinymce' ).'/tinymce.min.js', array('jquery'));
-		wp_enqueue_script('ctf-tinymce-compat3x', includes_url( 'js/tinymce' ).'/plugins/compat3x/plugin.min.js', array('jquery'));
-		wp_enqueue_script('ctf-customizer', CTF_URL.'core/customizer/assets/js/customizer.js', $dependency);
+		wp_enqueue_script('ctf-selectize');
+		wp_enqueue_script('ctf-tinymce');
+		wp_enqueue_script('ctf-tinymce-compat3x');
+		wp_enqueue_script('ctf-customizer', get_template_directory_uri().'/inc/customizer/assets/js/customizer.js', $dependency);
 
 		$ctf_google_fonts_json = array(
 			'l10n_print_after' => 'ctf_google_fonts = ' . CTF_Help::get_google_font_json(),

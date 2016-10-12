@@ -1,4 +1,9 @@
 <?php
+
+define('CTF_PATH', get_template_directory().'/inc/framework/');
+define('CTF_URL', get_template_directory_uri().'/inc/framework/');
+
+
 /**
  * _s functions and definitions.
  *
@@ -143,6 +148,22 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';
+
+
+/**
+ * Load Framework
+ */
+require get_template_directory() . '/inc/framework/cantoframework.php';
+
+/**
+ * Load customizer
+ */
+require get_template_directory() . '/inc/customizer/ctf_customizer.class.php';
+
+/**
  * Customizer Options
  */
 require get_template_directory() . '/inc/admin/customizer.php';
@@ -156,16 +177,6 @@ require get_template_directory() . '/inc/admin/metabox.php';
  * Customizer Options
  */
 require get_template_directory() . '/inc/admin/shortcode-map.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Load CantoFramework
- */
-require get_template_directory() . '/inc/framework/cantoframework.php';
 
 /**
  * TGM Plugin Activation Class
