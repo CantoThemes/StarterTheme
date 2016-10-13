@@ -1,9 +1,9 @@
         <div class="ctf-input-field ctf-input-field-google-font">
         	<# if( parseFloat(data.choices['font-family']) || _.isUndefined(data.choices['font-family']) ){ #>
 			<div class="ctf-if-gf-font-family">
-				<label>Font Family</label>
+				<label><?php esc_html_e('Font Family', '_s'); ?></label>
 				<select class="ctf-gf-ff-input">
-					<option value="">Select a font...</option>
+					<option value=""><?php esc_html_e('Select a font...', '_s'); ?></option>
 					<# for ( key in ctf_google_fonts ) { #>
 						<option value="{{ key }}"<# if ( key === data.value['font-family'] ) { #>selected<# } #>>{{ key }}</option>
 					<# } #>
@@ -13,7 +13,7 @@
 			<# if( parseFloat(data.choices['font-weight']) || _.isUndefined(data.choices['font-weight']) ){ #>
 			<div class="ctf-if-gf-font-weight">
 				<# var fontWeights = ctf_google_fonts[data.value['font-family']]; #>
-				<label>Font Weight</label>
+				<label><?php esc_html_e('Font Weight', '_s'); ?></label>
 				<select class="ctf-gf-fw-input">
 					<# for ( key in fontWeights ) { #>
 						<option value="{{ fontWeights[ key ] }}"<# if ( fontWeights[ key ] === data.value['font-weight'] ) { #>selected<# } #>>{{ fontWeights[ key ] }}</option>
@@ -40,7 +40,7 @@
 		        	units = data.choices['units'];
 		        }
 				#>
-				<label>Font Size</label>
+				<label><?php esc_html_e('Font Size', '_s'); ?></label>
 				<div class="ctf-input-dimension-number">
 					<input type="number" value="{{ fzNumber }}" min="0" class="ctf-gf-fz-value-input">
 				</div>
@@ -73,7 +73,7 @@
 		        	units = data.choices['units'];
 		        }
 				#>
-				<label>Line Height</label>
+				<label><?php esc_html_e('Line Height', '_s'); ?></label>
 				<div class="ctf-input-dimension-number">
 					<input type="number" value="{{ lhNumber }}" min="0" class="ctf-gf-lh-value-input">
 				</div>
@@ -97,7 +97,7 @@
 		        	units = data.choices['units'];
 		        }
 				#>
-				<label>Latter Spacing</label>
+				<label><?php esc_html_e('Latter Spacing', '_s'); ?></label>
 				<div class="ctf-input-dimension-number">
 					<input type="number" value="{{ lsNumber }}" min="0" class="ctf-gf-ls-value-input">
 				</div>
@@ -121,7 +121,7 @@
 		        	units = data.choices['units'];
 		        }
 				#>
-				<label>Word Spacing</label>
+				<label><?php esc_html_e('Word Spacing', '_s'); ?></label>
 				<div class="ctf-input-dimension-number">
 					<input type="number" value="{{ wsNumber }}" min="0" class="ctf-gf-ws-value-input">
 				</div>

@@ -8,5 +8,5 @@
             defaultValue = ' data-default-color=' + defaultValue; // Quotes added automatically.
         } #>
         <div class="ctf-input-field ctf-input-field-color">
-          <input type="text" class="ctf-color-field" maxlength="7" value="{{ data.value }}" placeholder="<?php esc_attr_e( 'Hex Value' ); ?>" {{{ data.link }}} {{ defaultValue }} >
+          <input type="text" class="ctf-color-field" maxlength="7" value="{{ data.value }}" placeholder="<?php esc_attr_e( 'Hex Value', '_s' ); ?>" {{{ data.link }}} {{ defaultValue }} >
         </div>

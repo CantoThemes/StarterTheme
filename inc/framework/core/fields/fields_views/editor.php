@@ -5,8 +5,8 @@
                 
             </div>
             <div class="wp-editor-tabs">
-                <button type="button" id="{{ data.id }}-tmce" class="wp-switch-editor switch-tmce" data-wp-editor-id="{{ data.id }}">Visual</button>
-                <button type="button" id="{{ data.id }}-html" class="wp-switch-editor switch-html" data-wp-editor-id="{{ data.id }}">Text</button>
+                <button type="button" id="{{ data.id }}-tmce" class="wp-switch-editor switch-tmce" data-wp-editor-id="{{ data.id }}"><?php esc_html_e("Visual", "_s"); ?></button>
+                <button type="button" id="{{ data.id }}-html" class="wp-switch-editor switch-html" data-wp-editor-id="{{ data.id }}"><?php esc_html_e("Text", "_s"); ?></button>
             </div>
         </div>
         <div id="wp-{{ data.id }}-editor-container" class="wp-editor-container">

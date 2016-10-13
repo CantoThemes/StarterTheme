@@ -24,6 +24,6 @@
             <# } #>
           </div>
           
-          <button type="button" class="ctf-btn image-upload-button"><i class="fa fa-picture-o" aria-hidden="true"></i> Add Image(s)</button>
+          <button type="button" class="ctf-btn image-upload-button"><i class="fa fa-picture-o" aria-hidden="true"></i> <?php esc_html_e('Add Image(s)', '_s'); ?></button>
           
         </div>

@@ -28,10 +28,10 @@
             <# } #>
           </div>
           <div class="ctf-ifi-btn-set">
-            <button type="button" class="ctf-btn ctf-btn-small image-change-button {{ hiddenClass }}"><i class="fa fa-pencil" aria-hidden="true"></i> Change Image</button>
-            <button type="button" class="ctf-btn ctf-btn-small ctf-btn-cancel image-remove-button {{ hiddenClass }}"><i class="fa fa-times" aria-hidden="true"></i> Remove Image</button>
+            <button type="button" class="ctf-btn ctf-btn-small image-change-button {{ hiddenClass }}"><i class="fa fa-pencil" aria-hidden="true"></i> <?php esc_html_e('Change Image', '_s'); ?></button>
+            <button type="button" class="ctf-btn ctf-btn-small ctf-btn-cancel image-remove-button {{ hiddenClass }}"><i class="fa fa-times" aria-hidden="true"></i> <?php esc_html_e('Remove Image', '_s'); ?></button>
           </div>
           
-          <button type="button" class="ctf-btn image-upload-button {{ addbtnHiddenClass }}"><i class="fa fa-picture-o" aria-hidden="true"></i> Add Image</button>
+          <button type="button" class="ctf-btn image-upload-button {{ addbtnHiddenClass }}"><i class="fa fa-picture-o" aria-hidden="true"></i> <?php esc_html_e('Add Image', '_s'); ?></button>
           
         </div>
