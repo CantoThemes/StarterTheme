@@ -1,7 +1,11 @@
 <?php
 
-define('CTF_PATH', get_template_directory().'/inc/framework/');
-define('CTF_URL', get_template_directory_uri().'/inc/framework/');
+if ( ! defined( 'CTF_PATH' ) ){
+	define('CTF_PATH', get_template_directory().'/inc/framework/');
+}
+if ( ! defined( 'CTF_URL' ) ){
+	define('CTF_URL', get_template_directory_uri().'/inc/framework/');
+}
 
 
 /**
@@ -156,7 +160,7 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Load Framework
  */
-require get_template_directory() . '/inc/framework/cantoframework.php';
+require get_template_directory() . '/framework/cantoframework.php';
 
 /**
  * Load customizer
